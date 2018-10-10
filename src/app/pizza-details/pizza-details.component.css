@@ -1,0 +1,19 @@
+h2 {
+    text-align: center;
+    color: red;
+}
+
+h3 {
+    font-size: 4em;
+}
+img {
+    width: 25%;
+}
+#rowimg{
+    text-align: center;
+}
+
+p {
+    font-size: 3em;
+    font-weight: bold;
+}

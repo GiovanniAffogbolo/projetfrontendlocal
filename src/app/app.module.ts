@@ -10,6 +10,9 @@ import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
 
+import { NgxPayPalModule } from 'ngx-paypal';
+import { ApiModule } from './REST';
+
 const appRoutes: Routes = [
   { 
     path: '',
@@ -30,7 +33,6 @@ const appRoutes: Routes = [
     path: '**',
     component: NotfoundComponent
   },
-  //{ path: 'pizza-details', component: PizzaDetailsComponent },
 ];
 
 
@@ -40,17 +42,15 @@ const appRoutes: Routes = [
     PizzaComponent,
     PizzaListComponent,
     PizzaDetailsComponent,
-    NotfoundComponent
+    NotfoundComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
-    /*RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),*/
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPayPalModule,
+    ApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

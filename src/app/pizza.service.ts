@@ -13,16 +13,18 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class PizzaService {
-  /*pizzaid: Number;
-  pizzaname: String;
-  pizzaprice: Number;
-  pizzaurl: String;  */
+  
   private pizzaParams = [];
   URL = "https://lpa2sgadot.herokuapp.com"
+
   constructor(private messageService: MessageService ,private httpclient: HttpClient) { }
 
   public listPizzas(): Observable<Pizza[]> {
     return this.httpclient.get<Pizza[]>(this.URL + '/pizzas.json')
+  }
+
+  public getPizza(id: number): Observable<Pizza> {
+    return this.httpclient.get<Pizza>(this.URL + `/pizzas/${id}.json`)
   }
 
   /*public getPizzaById(id: number): Observable<Pizza> {
@@ -32,7 +34,7 @@ export class PizzaService {
       tap(_ => this.log(`fetched pizza id=${id}`)),
       catchError(this.handleError<Pizza>(`getPizza id=${id}`))
     );
-  }*/
+  }
 
   public getPizzaById(id: number) {
     const url = `${this.URL}/pizzas/${id}.json`;
@@ -46,7 +48,7 @@ export class PizzaService {
       return this.pizzaParams[name = name, price = price, url = url ]
     });
 
-  }
+  }*/
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

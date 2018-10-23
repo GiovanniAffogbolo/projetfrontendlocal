@@ -14,7 +14,7 @@ exports.handler = function(event, context, callback) {
 
    console.log('Verifying');
    console.log(body);
-
+   console.log(JSON.stringify(querystring.parse(body), null, 2));
    var options = {
        url: 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr',
        method: 'POST',
@@ -37,7 +37,6 @@ exports.handler = function(event, context, callback) {
 
                //The IPN is verified
                console.log('Verified IPN!');
-               console.log(JSON.stringify(querystring.parse(body), null, 2));
            } else if (body.substring(0, 7) === 'INVALID') {
 
                //The IPN invalid

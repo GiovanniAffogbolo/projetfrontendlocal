@@ -4,6 +4,7 @@
     body: "Hello, World"
     });
 }*/
+
 const request = require('request');
 
 exports.handler = (event, context, callback) => {
@@ -11,7 +12,7 @@ exports.handler = (event, context, callback) => {
 
     //Return 200 to caller
     callback(null, {
-        statusCode: '200',
+        statusCode: 200,
         body: ""
     });
 

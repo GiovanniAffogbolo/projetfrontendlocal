@@ -12,4 +12,4 @@
 
 # Directory with the lambda functions to deploy to AWS.
 
-  functions = "src/functions"
+  functions = "src/functions_out"

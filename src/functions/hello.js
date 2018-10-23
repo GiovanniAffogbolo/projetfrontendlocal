@@ -12,7 +12,7 @@ exports.handler = (event, context, callback) => {
     //Return 200 to caller
     callback(null, {
         statusCode: '200',
-        body: "ValidationJs"
+        body: ""
     });
 
     //Read the IPN message sent from PayPal and prepend 'cmd=_notify-validate'
@@ -22,7 +22,7 @@ exports.handler = (event, context, callback) => {
     console.log(body);
 
     var options = {
-        url: 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+        url: 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr',
         method: 'POST',
         headers: {
             'Connection': 'close'

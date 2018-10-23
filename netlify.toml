@@ -1,6 +1,3 @@
-#[build]
-#  functions = "src/functions"
-
 #verifie sur netlify si "see netlify.toml not used" et execute cette commande
 [build]
   # Directory (relative to root of your repo) that contains the deploy-ready
